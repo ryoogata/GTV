@@ -52,6 +52,14 @@ program$program_name <- stringr::str_replace_all(program$program_name
                                                  ,pattern = "Car-X’s with NAPAC"
                                                  ,replacement = "Car X's with NAPAC"
                                                  )
+program$program_name <- stringr::str_replace_all(program$program_name
+                                                 ,pattern = "ニュースジャスト6"
+                                                 ,replacement = "ニュースJUST6"
+                                                 )
+program$program_name <- stringr::str_replace_all(program$program_name
+                                                 ,pattern = "ニュースジャスト\\d*"
+                                                 ,replacement = "ニュースJUST"
+                                                 )
 
 over24hours <- function(x){
   as.Date(x) + lubridate::hms(sub(".* ", "", x))
