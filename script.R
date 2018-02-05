@@ -36,6 +36,7 @@ program %<>% mutate("re-air" = stringr::str_detect(program$program_name, pattern
 
 # 番組名の[再]/[/[を削除
 program$program_name <- stringr::str_replace(program$program_name, pattern = "\\[再]", replacement = "")
+program$program_name <- stringr::str_replace(program$program_name, pattern = "\\[最終回]", replacement = "")
 program$program_name <- stringr::str_replace(program$program_name, pattern = "\\[", replacement = "")
 program$program_name <- stringr::str_replace(program$program_name, pattern = "\\]", replacement = "")
 
